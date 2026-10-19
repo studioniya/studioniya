@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Niya Prabhakar is a London-based artist working across painting, installation and spatial storytelling.">
+<meta property="og:title" content="Niya Prabhakar">
+<meta property="og:description" content="Painting, installation and spatial storytelling. London.">
+<meta property="og:image" content="https://studioniya.com/img/the-fabric-of-persistence-main-1.jpg">
+<meta property="og:url" content="https://studioniya.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://studioniya.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%3E%3Cpath%20d='M2.0%202.0%208.8%202.9%2014.3%208.1%2013.5%2010.6%2011.2%2011.9%209.8%2014.6%207.7%2014.3%202.7%209.0%20Z'%20fill='%23262626'%20stroke-linejoin='round'/%3E%3Cpath%20d='M8.3%205.9%2012.2%209.3'%20stroke='%23555'%20stroke-width='.8'%20stroke-linecap='round'/%3E%3C/svg%3E">
+<title>Niya Prabhakar</title>
+</head>
+<body>
+<style>
+/* Layout: follows the Künstler template. Uppercase grotesk throughout, generous white space, the work does the talking. */
+:root {
+  --wall: #ffffff;
+  --ink: #111111;
+  --soft: #8a8a8a;
+  --line: #e8e8e8;
+  --tile: #f2f2f2;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { background: var(--wall); color: var(--ink); }
+body { font: 400 14px/1.45 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 1.5px solid var(--ink); outline-offset: 3px; }
+.up { text-transform: uppercase; letter-spacing: .01em; }
+.gut { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.col { max-width: 1600px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.col > .inner { width: min(100%, 1180px); margin: 0 auto; }
+
+.preview { background: var(--ink); color: var(--wall); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.preview .gut { padding-block: 6px; }
+
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--wall); }
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--wall); }
+header.site .gut { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .nm { font-size: 14px; }
+.brand .role { color: var(--soft); font-size: 14px; }
+nav.main { display: flex; gap: 22px; font-size: 14px; }
+nav.main a:hover, nav.main a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Home */
+.home { min-height: calc(100vh - 120px); display: grid; grid-template-rows: 1fr auto; }
+.home .intro { align-self: center; padding-block: 72px 48px; }
+.home .intro p { margin: 0; max-width: 34em; font-size: 16px; line-height: 1.5; color: var(--soft); }
+.home .intro p b { font-weight: 400; color: var(--ink); }
+.marquee { overflow: hidden; padding-block: 8px 40px; }
+.track { display: flex; gap: 12px; width: max-content; animation: drift 70s linear infinite; }
+.marquee:hover .track { animation-play-state: paused; }
+.track a { flex: none; width: clamp(150px, 13vw, 240px); aspect-ratio: 4 / 5; background: var(--tile); overflow: hidden; display: block; }
+.track a { position: relative; }
+.track img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@keyframes drift { to { transform: translateX(-50%); } }
+@media (hover: hover) {
+  .track img { filter: grayscale(1); transition: filter .4s ease; }
+  .track a:hover img, .track a:focus-visible img { filter: none; }
+}
+
+/* Works */
+.works-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding-block: 96px 64px; }
+.works-head h1 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 700; margin: 0; letter-spacing: -.01em; }
+.picker { display: grid; gap: 8px; min-width: 200px; }
+.picker label { font-size: 13px; color: #555; }
+.picker select { font: 400 15px var(--sans); color: var(--ink); background: var(--wall); border: 1px solid var(--line); border-radius: 8px; padding: 10px 36px 10px 14px; appearance: none; background-image: linear-gradient(45deg, transparent 50%, #777 50%), linear-gradient(135deg, #777 50%, transparent 50%); background-position: calc(100% - 18px) 52%, calc(100% - 13px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 44px 20px; padding-bottom: 110px; }
+.card { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.card .cap { display: flex; justify-content: space-between; gap: 10px; min-width: 0; font-size: 11px; letter-spacing: .02em; white-space: nowrap; }
+.card .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.card .c { color: var(--soft); white-space: nowrap; }
+.card .frame { aspect-ratio: 4 / 5; background: var(--tile); overflow: hidden; display: block; max-width: 100%; }
+.card .frame { position: relative; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .3s; }
+.card:hover img { opacity: .88; }
+
+/* Work page */
+.w-top { padding-block: 72px 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.w-top h1 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 700; margin: 0; letter-spacing: -.01em; }
+.w-meta { display: grid; gap: 2px; font-size: 13px; align-content: start; }
+.w-meta .k { color: var(--soft); }
+.statement { max-width: 46em; font-size: 15px; line-height: 1.6; margin: 0 0 56px; }
+.hero-img { margin: 0 0 72px; }
+.hero-img + .hero-img { margin-top: -40px; }
+.zoom { cursor: zoom-in; }
+.hero-img { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+.hero-img img, .hero-img video { max-width: 100%; max-height: calc(100vh - 150px); width: auto; height: auto; display: block; background: var(--tile); }
+figcaption { font-size: 12px; text-transform: uppercase; margin-top: 10px; }
+.thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 96px; }
+.thumbs figure { margin: 0; }
+.thumbs .frame { aspect-ratio: 3 / 4; overflow: hidden; background: var(--tile); }
+.thumbs .frame { position: relative; }
+.thumbs .frame.wide { aspect-ratio: 16 / 9; }
+.thumbs.stills { margin-bottom: 160px; }
+.thumbs.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.thumbs img, .thumbs video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.pager { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; border-top: 1px solid var(--line); padding-block: 22px 72px; font-size: 13px; text-transform: uppercase; }
+.pager a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.pager .k { color: var(--soft); display: block; }
+.pager .next { text-align: right; }
+
+/* About */
+.about { padding-block: 96px 120px; }
+.about h1 { font-size: clamp(26px, 2.6vw, 34px); font-weight: 700; margin: 0 0 96px; letter-spacing: -.01em; }
+.about-top { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 0; text-transform: uppercase; font-size: 13px; line-height: 1.55; }
+.portrait { width: 170px; aspect-ratio: 6 / 7; object-fit: cover; display: block; background: var(--tile); }
+.contact { margin-top: 44px; display: grid; gap: 18px; }
+.contact a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.bio { max-width: 52em; }
+.bio p { margin: 0 0 1.4em; }
+.rule { border: 0; border-top: 1px solid var(--ink); margin: 48px 0 96px; }
+.cv { display: grid; gap: 72px; text-transform: uppercase; }
+.cv h2 { font-size: 15px; font-weight: 400; margin: 0 0 24px; }
+.cv ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.cv li { font-size: 13px; }
+.cv .y { margin-right: 8px; font-variant-numeric: tabular-nums; }
+
+/* Side quest */
+.quest { height: 220vh; position: relative; }
+.quest .stage { position: sticky; top: 0; height: calc(100vh - 60px); display: grid; place-items: center; }
+.quest .layer { grid-area: 1 / 1; display: grid; place-items: center; padding-inline: 20px; text-align: center; }
+.quest blockquote { margin: 0; max-width: 34em; font-size: clamp(16px, 1.7vw, 22px); line-height: 1.5; text-transform: uppercase; }
+@media (hover: hover) and (pointer: fine) {
+  html, body, a, button, label, select { cursor: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='20'%20height='20'%20viewBox='0%200%2020%2020'%3E%3Cpath%20d='M2.0%202.0%208.8%202.9%2014.3%208.1%2013.5%2010.6%2011.2%2011.9%209.8%2014.6%207.7%2014.3%202.7%209.0%20Z'%20fill='%23262626'%20stroke-linejoin='round'/%3E%3Cpath%20d='M8.3%205.9%2012.2%209.3'%20stroke='%23555'%20stroke-width='.8'%20stroke-linecap='round'/%3E%3C/svg%3E") 2 2, auto; }
+}
+.quest .orbit { position: relative; padding: 56px 72px; }
+.quest .fish { position: absolute; left: 0; top: 0; will-change: transform; }
+.quest .logo { display: block; width: min(56vw, 360px); }
+.quest .logo img { width: 100%; height: auto; display: block; }
+.quest .hint { position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font-size: 11px; text-transform: uppercase; color: var(--soft); }
+.viewer { position: fixed; inset: 0; z-index: 20; background: rgba(255,255,255,.97); display: grid; grid-template-rows: auto 1fr auto; padding: max(14px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); }
+.viewer .bar { display: flex; justify-content: flex-end; }
+.viewer button { font: 400 13px var(--sans); text-transform: uppercase; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 8px; }
+.viewer button:hover { text-decoration: underline; text-underline-offset: 4px; }
+.viewer .stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 0; }
+.viewer img { max-width: 100%; max-height: calc(100vh - 140px); margin: 0 auto; display: block; }
+.viewer .vcap { text-align: center; font-size: 12px; text-transform: uppercase; padding-top: 10px; }
+footer.site .gut { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; padding-block: 20px 26px; font-size: 13px; text-transform: uppercase; }
+footer.site .left { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+footer.site a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.fade { animation: fade .4s ease both; }
+@keyframes fade { from { opacity: .001; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .quest .layer { transition: none; }
+  .fade { animation: none; }
+  .track { animation: none; }
+  .marquee { overflow-x: auto; }
+}
+@media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .about-top { grid-template-columns: 220px minmax(0, 1fr); } }
+@media (max-width: 760px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 14px; }
+  .card .cap { flex-direction: column; gap: 2px; white-space: normal; }
+  .brand .nm, nav.main { font-size: 12px; white-space: nowrap; }
+  nav.main { gap: 14px; }
+  .w-top, .about-top { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .thumbs, .thumbs.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .thumbs.stills { margin-bottom: 96px; }
+  .works-head, .about { padding-top: 56px; }
+  .brand .role { display: none; }
+}
+@media (max-width: 420px) { .pager { grid-template-columns: 1fr 1fr; } .pager .mid { display: none; } }
+/* Film player: a poster that swaps to the YouTube player on click, so nothing loads from YouTube until someone presses play */
+.film { margin: 0 auto 72px; width: min(100%, calc((100vh - 170px) * 16 / 9)); }
+.yt, .film iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; padding: 0; background: #111; position: relative; overflow: hidden; }
+.yt img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .85; transition: opacity .3s; }
+.yt:hover img, .yt:focus-visible img { opacity: 1; }
+.yt .play { position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1.5px solid #fff; }
+.yt .play::after { content: ""; position: absolute; left: 31px; top: 25px; border-left: 20px solid #fff; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.film figcaption { margin-top: 10px; font-size: 13px; text-transform: uppercase; }
+/* Flip book */
+.book-sec { margin: 0 0 96px; }
+.book-sec .b-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 20px; font-size: 13px; }
+.book-sec .b-head .k { color: var(--muted, #8a8a8a); }
+.book-stage { display: flex; justify-content: center; padding: 8px 0 24px; overflow: hidden; }
+.book { position: relative; width: min(100%, 980px, calc((100vh - 230px) * 1.41)); aspect-ratio: 839.52 / 595.44; perspective: 2600px; transition: transform .8s cubic-bezier(.3,.1,.2,1); outline: none; }
+.book.at-start { transform: translateX(-25%); }
+.book.at-end { transform: translateX(25%); }
+.leaf { position: absolute; left: 50%; top: 0; width: 50%; height: 100%; transform-origin: left center; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.3,.1,.2,1); }
+.leaf.flipped { transform: rotateY(-180deg); }
+.face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #fff; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 14px 30px -12px rgba(0,0,0,.28); }
+.face img { width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; -webkit-user-drag: none; }
+.face.back { transform: rotateY(180deg); }
+.face::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.face.front::after { background: linear-gradient(to right, rgba(0,0,0,.16), rgba(0,0,0,0) 7%); }
+.face.back::after { background: linear-gradient(to left, rgba(0,0,0,.16), rgba(0,0,0,0) 7%); }
+.leaf:first-child .face.front::after, .leaf:last-child .face.back::after { background: none; }
+.b-ctrl { display: flex; justify-content: center; align-items: center; gap: 28px; font-size: 13px; }
+.b-ctrl button { font: inherit; text-transform: uppercase; letter-spacing: inherit; background: none; border: 0; padding: 6px 2px; color: inherit; }
+.b-ctrl button:disabled { opacity: .3; }
+.b-ctrl .count { min-width: 9em; text-align: center; color: var(--muted, #8a8a8a); }
+@media (prefers-reduced-motion: reduce) { .leaf, .book { transition: none; } }
+</style>
+
+
+<header class="site"><div class="gut">
+  <a class="brand up" href="#home"><span class="nm">Niya Prabhakar</span><span class="role" id="role">Artist</span></a>
+  <nav class="main up" aria-label="Main">
+    <a href="#works" data-nav="works">Works</a>
+    <a href="#side-quest" data-nav="side-quest">Side Quest</a>
+    <a href="#about" data-nav="about">About</a>
+  </nav>
+</div></header>
+
+<main id="app"></main>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="bar"><button type="button" id="v-close">Close</button></div>
+  <div class="stage"><button type="button" id="v-prev" aria-label="Previous image">←</button><img id="v-img" alt=""><button type="button" id="v-next" aria-label="Next image">→</button></div>
+  <div class="vcap" id="v-cap"></div>
+</div>
+
+<footer class="site"><div class="gut">
+  <div class="left"><span>©2026 Niya Prabhakar</span><span aria-hidden="true">|</span><a href="mailto:niyaprabhakar8@gmail.com">Email</a></div>
+</div></footer>
+
+<script>
+const WORKS = [
+ {
+  "slug": "the-fabric-of-persistence",
+  "title": "The Fabric of Persistence",
+  "year": "2026",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "the-fabric-of-persistence-main-1.jpg",
+  "media": [
+   "the-fabric-of-persistence-main-1.jpg",
+   "the-fabric-of-persistence-sketch-1.jpg",
+   "the-fabric-of-persistence-wip-1.jpg",
+   "the-fabric-of-persistence-wip-4.jpg",
+   "the-fabric-of-persistence-wip-6.jpg",
+   "the-fabric-of-persistence-wip-7.jpg",
+   "the-fabric-of-persistence-wip-8.jpg"
+  ]
+ },
+ {
+  "slug": "palimpsest",
+  "title": "Palimpsest",
+  "year": "2026",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "palimpsest-main-1.jpg",
+  "media": [
+   "palimpsest-main-1.jpg",
+   "palimpsest-main-2.jpg"
+  ]
+ },
+ {
+  "slug": "for-the-oxford-marine-protection-project",
+  "title": "For OMPP",
+  "year": "2026",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "for-the-oxford-marine-protection-project-main-1.jpg",
+  "media": [
+   "for-the-oxford-marine-protection-project-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "plum-paradox",
+  "title": "Plum Paradox",
+  "year": "2025",
+  "medium": "Acrylic on canvas",
+  "size": "40 × 60 cm",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "Exploring my current favourite fruit, the plum, drawing parallels between it's behaviour with mine, exploring the stark contrast of it's outer shine to it's insides in terms of colour, flavour and texture. Understanding how comfortable the plum is in it's own skin.",
+  "cover": "plum-paradox-main-1.jpg",
+  "media": [
+   "plum-paradox-main-1.jpg",
+   "plum-paradox-main-2.jpg"
+  ]
+ },
+ {
+  "slug": "dirty-jeans",
+  "title": "Dirty Jeans",
+  "year": "2025",
+  "medium": "Acrylic on canvas",
+  "size": "40 × 60 cm",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "An observation and narration on perpetually feeling underdressed in situations and places, around people. An acceptance towards paint marks on jeans and a realisation that there is value in marks and scars.",
+  "cover": "dirty-jeans-main-1.jpg",
+  "media": [
+   "dirty-jeans-main-1.jpg",
+   "dirty-jeans-main-2.jpg"
+  ]
+ },
+ {
+  "slug": "the-first-apartment",
+  "title": "The First Apartment",
+  "year": "2025",
+  "medium": "Acrylic on canvas, 2 panels",
+  "size": "20 × 30 cm",
+  "cats": [
+   "Painting",
+   "Mixed media"
+  ],
+  "statement": "A piece that marks the first step in the journey of an idea taking off, an ode to the place the idea was born in. Made in layers on layers emulating the nuance of the process of conceiving a personal business venture.",
+  "cover": "the-first-apartment-main-1.jpg",
+  "media": [
+   "the-first-apartment-main-1.jpg",
+   "the-first-apartment-sketch-1.jpg"
+  ]
+ },
+ {
+  "slug": "superintelligence",
+  "title": "Superintelligence",
+  "year": "2025",
+  "medium": "Acrylic on canvas",
+  "size": "77 × 168 cm",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "Understanding AI. Each mark is a tiny coefficient: meaningless alone, miraculous in concert. From a distance the piece reads as a soft colour field; step closer and the neat rows of numbers come into focus, revealing the math behind the magic. This piece is an invitation to stand inside the question: How does meaning arise from pure arithmetic? Painting became my way into that conversation, an artist's dialog with code.",
+  "cover": "superintelligence-main-1.jpg",
+  "media": [
+   "superintelligence-main-1.jpg",
+   "superintelligence-main-2.jpg",
+   "superintelligence-main-3.jpg",
+   "superintelligence-main-4.jpg"
+  ]
+ },
+ {
+  "slug": "gravy",
+  "title": "Gravy",
+  "year": "2025",
+  "medium": "Acrylic on canvas",
+  "size": "40 × 50 cm",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "The essence of an Indian curry is in its fearlessness and simplicity. Tomato, onion, ginger, garlic, green chillies - and the world in the palm of my hand.",
+  "cover": "gravy-main-1.jpg",
+  "media": [
+   "gravy-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "shift",
+  "title": "Shift",
+  "year": "2025",
+  "medium": "Sound vibrations, powdered colour pigment, captured by a camera, printed on wooden blocks",
+  "size": "182 × 182 cm",
+  "cats": [
+   "Painting",
+   "Installation"
+  ],
+  "statement": "",
+  "cover": "shift-main-1.jpg",
+  "media": [
+   "shift-main-1.jpg",
+   "shift-main-2.jpg"
+  ],
+  "yearNote": "Conceived 2021, visualised 2025"
+ },
+ {
+  "slug": "incidental-36",
+  "title": "Incidental 36",
+  "year": "2024",
+  "role": "Production design",
+  "medium": "Production design, short film",
+  "size": "",
+  "cats": [
+   "Lens"
+  ],
+  "statement": "",
+  "video": {
+   "youtube": "PEepBwOrnzU"
+  },
+  "cover": "incidental-36-still-1.jpg",
+  "media": [
+   "incidental-36-still-1.jpg",
+   "incidental-36-still-2.jpg",
+   "incidental-36-still-3.jpg",
+   "incidental-36-still-4.jpg",
+   "incidental-36-still-5.jpg",
+   "incidental-36-still-6.jpg",
+   "incidental-36-wip-1.jpg",
+   "incidental-36-wip-2.jpg",
+   "incidental-36-wip-3.jpg",
+   "incidental-36-wip-4.jpg",
+   "incidental-36-wip-5.jpg",
+   "incidental-36-wip-6.jpg",
+   "incidental-36-wip-7.jpg",
+   "incidental-36-wip-8.jpg"
+  ]
+ },
+ {
+  "slug": "daana-pani",
+  "title": "Daana Pani",
+  "year": "2024",
+  "medium": "Acrylic on unprimed canvas",
+  "size": "167 × 182 cm",
+  "cats": [
+   "Painting",
+   "Installation"
+  ],
+  "statement": "The inspiration behind the artwork stems from a cultural saying known as 'dana paani,' which translates literally to 'grain of food and drop of water.' This saying serves as a reassurance in times when we question the direction our life is taking, suggesting that we will find ourselves exactly where we are meant to be, as that is where we're meant to nourish ourselves with food and water. Something powerful and poetic about how each morsel of food, every inch of success or struggle that is meant for us will find it's way to us. The pattern draws inspiration from grains of rice, resembling footsteps / movement that symbolise the journey a person takes in life. The pattern has this sort of relentless quality that's almost hypnotic.",
+  "cover": "daana-pani-main-3.jpg",
+  "book": {
+   "title": "Daana Pani: a narrative artefact",
+   "note": "A5 publication, 20 pages, RCA 2024",
+   "pages": 20
+  },
+  "media": [
+   "daana-pani-main-1.jpg",
+   "daana-pani-main-2.jpg",
+   "daana-pani-main-3.jpg",
+   "daana-pani-main-4.jpg",
+   "daana-pani-main-5.jpg",
+   "daana-pani-installation.jpg",
+   "daana-pani-main-6.mp4"
+  ]
+ },
+ {
+  "slug": "blue-and-orange",
+  "title": "Blue & Orange",
+  "year": "2024",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "blue-and-orange-main-1.jpg",
+  "media": [
+   "blue-and-orange-main-1.jpg",
+   "blue-and-orange-main-2.jpg",
+   "blue-and-orange-main-3.jpg"
+  ]
+ },
+ {
+  "slug": "incarnation",
+  "title": "Incarnation",
+  "year": "2024",
+  "medium": "Acrylic and ink on paper",
+  "size": "30 × 42 cm",
+  "cats": [
+   "Painting",
+   "Mixed media"
+  ],
+  "statement": "A representation of my own intuitive understanding of my energy and aura.",
+  "cover": "incarnation-main-1.jpg",
+  "media": [
+   "incarnation-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "diary-entry",
+  "title": "Diary Entry",
+  "year": "2024",
+  "medium": "Acrylic and ink on paper",
+  "size": "",
+  "cats": [
+   "Painting",
+   "Mixed media"
+  ],
+  "statement": "An impulsive, intuitive burst of colour post a 2 hour long meditation session.",
+  "cover": "diary-entry-main-1.jpg",
+  "media": [
+   "diary-entry-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "relationship-with-yellow",
+  "title": "Relationship with Yellow",
+  "year": "2021",
+  "medium": "Acrylic and kite paper on wood",
+  "size": "76 × 152 cm",
+  "cats": [
+   "Painting",
+   "Mixed media"
+  ],
+  "statement": "",
+  "cover": "relationship-with-yellow-main-1.jpg",
+  "media": [
+   "relationship-with-yellow-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "frameless",
+  "title": "Frameless",
+  "year": "2021",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "frameless-main-1.jpg",
+  "media": [
+   "frameless-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "pink-denim",
+  "title": "Pink Denim",
+  "year": "2021",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "pink-denim-main-1.jpg",
+  "media": [
+   "pink-denim-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "red-vs-blue",
+  "title": "Red Vs Blue",
+  "year": "2021",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "red-vs-blue-main-1.jpg",
+  "media": [
+   "red-vs-blue-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "the-deep-blue",
+  "title": "The Deep Blue",
+  "year": "2021",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "the-deep-blue-main-1.jpg",
+  "media": [
+   "the-deep-blue-main-1.jpg"
+  ]
+ },
+ {
+  "slug": "untitled",
+  "title": "Untitled",
+  "year": "2021",
+  "medium": "",
+  "size": "",
+  "cats": [
+   "Painting"
+  ],
+  "statement": "",
+  "cover": "untitled-main-1.jpg",
+  "media": [
+   "untitled-main-1.jpg"
+  ]
+ }
+];
+
+const FILTERS = ["All", "Painting", "Mixed media", "Installation", "Lens"];
+const HERO = { "superintelligence": "superintelligence-main-2.jpg", "daana-pani": "daana-pani-main-1.jpg" };
+// Shown as the main image when a work is opened from the Installation category.
+const INSTALL = { "daana-pani": "daana-pani-installation.jpg" };
+const DIPTYCH = ["plum-paradox", "dirty-jeans"];
+let filter = "Painting";
+const app = document.getElementById("app");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const thumb = f => "img/" + f.replace(/\.jpg$/, "-t.jpg");
+const label = w => w.role ? w.role : w.cats.includes("Installation") ? "Installation" : w.cats.includes("Mixed media") ? "Mixed media" : "Painting";
+
+function homeView() {
+  const items = WORKS.map(w => `<a href="#work-${w.slug}" aria-label="${esc(w.title)}"><img src="${thumb(w.cover)}" alt="${esc(w.title)}, ${w.year}"></a>`).join("");
+  return `
+  <div class="home fade">
+    <section class="gut intro"><p class="up"><b>Niya</b> is a London-based artist working across large-scale painting, installation and spatial storytelling.</p></section>
+    <section class="marquee" aria-label="Selected works"><div class="track">${items}${items.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ')}</div></section>
+  </div>`;
+}
+
+function worksView() {
+  const list = filter === "All" ? WORKS : WORKS.filter(w => w.cats.includes(filter));
+  const inst = w => filter === "Installation" && INSTALL[w.slug];
+  return `
+  <div class="col fade"><div class="inner">
+    <div class="works-head">
+      <h1 class="up">Works</h1>
+      <div class="picker"><label for="cat">Category</label>
+        <select id="cat">${FILTERS.map(f => `<option${f === filter ? " selected" : ""}>${esc(f)}</option>`).join("")}</select></div>
+    </div>
+    <div class="grid">${list.map(w => `
+      <a class="card" href="#work-${w.slug}${inst(w) ? "/installation" : ""}">
+        <span class="cap up"><span class="t">${esc(w.title)}</span><span class="c">${label(w)}</span></span>
+        <span class="frame"><img src="${thumb(inst(w) || w.cover)}" alt="${esc(w.title)}, ${w.year}" loading="lazy"></span>
+      </a>`).join("")}</div>
+  </div></div>`;
+}
+
+function mediaEl(f, alt, cls) {
+  return f.endsWith(".mp4")
+    ? `<video src="img/${f}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(alt)}"></video>`
+    : `<img src="img/${cls === "thumb" ? f.replace(/\.jpg$/, "-t.jpg") : f}" alt="${esc(alt)}" loading="lazy">`;
+}
+
+function bookView(w) {
+  const b = w.book, n = b.pages, page = p => `img/${w.slug}-book-${String(p).padStart(2, "0")}.jpg`;
+  const leaves = Array.from({ length: Math.ceil(n / 2) }, (_, i) => `
+      <div class="leaf" style="z-index:${n - i}">
+        <div class="face front"><img src="${page(2 * i + 1)}" alt="Page ${2 * i + 1}" loading="${i < 2 ? "eager" : "lazy"}" draggable="false"></div>
+        ${2 * i + 2 <= n ? `<div class="face back"><img src="${page(2 * i + 2)}" alt="Page ${2 * i + 2}" loading="${i < 1 ? "eager" : "lazy"}" draggable="false"></div>` : ""}
+      </div>`).join("");
+  return `
+    <section class="book-sec" aria-label="${esc(b.title)}">
+      <div class="b-head up"><span>${esc(b.title)}</span><span class="k">${esc(b.note)}</span></div>
+      <div class="book-stage"><div class="book at-start" tabindex="0" aria-roledescription="flip book">${leaves}</div></div>
+      <div class="b-ctrl up"><button type="button" data-flip="-1" aria-label="Previous page">← Prev</button><span class="count" aria-live="polite"></span><button type="button" data-flip="1" aria-label="Next page">Next →</button></div>
+    </section>`;
+}
+
+function workView(w, asInstall) {
+  const i = WORKS.indexOf(w), prev = WORKS[(i - 1 + WORKS.length) % WORKS.length], next = WORKS[(i + 1) % WORKS.length];
+  const cap = f => [w.title, f.includes("-installation") ? "Installation view" : f.includes("-still-") ? "Film still" : f.includes("-sketch-") ? "Sketch" : f.includes("-wip-") ? "Work in progress" : f.endsWith(".mp4") ? "Video" : w.medium, w.year].filter(Boolean).join(", ");
+  const mains = w.video ? [] : DIPTYCH.includes(w.slug) ? w.media.slice(0, 2) : [(asInstall && INSTALL[w.slug]) || HERO[w.slug] || w.cover];
+  const rest = w.media.filter(f => !mains.includes(f));
+  const capOf = (f, n) => DIPTYCH.includes(w.slug) ? [w.title + " (" + ["I", "II"][n] + ")", w.medium, w.year].filter(Boolean).join(", ") : cap(f);
+  return `
+  <div class="col fade"><div class="inner">
+    <div class="w-top">
+      <h1 class="up">${esc(w.title)}</h1>
+      <div class="w-meta up">
+        <span><span class="k">Year </span>${esc(w.yearNote || w.year)}</span>
+        ${w.medium ? `<span><span class="k">Medium </span>${esc(w.medium)}</span>` : ""}
+        ${w.size ? `<span><span class="k">Size </span>${esc(w.size)}</span>` : ""}
+        <span><span class="k">Category </span>${w.cats.join(", ")}</span>
+      </div>
+    </div>
+    ${w.statement ? `<p class="statement">${esc(w.statement)}</p>` : ""}
+    ${w.video ? `<figure class="film"><button type="button" class="yt" data-yt="${w.video.youtube}" aria-label="Play ${esc(w.title)}"><img src="img/${w.cover}" alt=""><span class="play" aria-hidden="true"></span></button><figcaption><a href="https://www.youtube.com/watch?v=${w.video.youtube}" target="_blank" rel="noopener">Watch on YouTube ↗</a></figcaption></figure>` : ""}
+    ${mains.map((f, n) => `<figure class="hero-img">${f.endsWith(".mp4") ? mediaEl(f, w.title, "full") : `<img class="zoom" src="img/${f}" alt="${esc(capOf(f, n))}" data-zoom="${f}" data-cap="${esc(capOf(f, n))}">`}<figcaption>${esc(capOf(f, n))}</figcaption></figure>`).join("")}
+    ${(() => {
+      // Film pages: stills in wide frames, then a wider gap, then the work-in-progress photos four to a row.
+      const fig = f => `<figure><div class="frame${f.includes("-still-") ? " wide" : ""}">${f.endsWith(".mp4") ? mediaEl(f, cap(f), "thumb") : `<img class="zoom" src="${thumb(f)}" alt="${esc(cap(f))}" loading="lazy" data-zoom="${f}" data-cap="${esc(cap(f))}">`}</div><figcaption>${esc(cap(f))}</figcaption></figure>`;
+      const stills = rest.filter(f => f.includes("-still-")), others = rest.filter(f => !f.includes("-still-"));
+      if (!stills.length) return rest.length ? `<div class="thumbs">${rest.map(fig).join("")}</div>` : "";
+      return `<div class="thumbs stills">${stills.map(fig).join("")}</div>` + (others.length ? `<div class="thumbs four">${others.map(fig).join("")}</div>` : "");
+    })()}
+    ${w.book ? bookView(w) : ""}
+    <nav class="pager" aria-label="More works">
+      <a href="#work-${prev.slug}"><span class="k">Previous project</span>${esc(prev.title)}</a>
+      <a class="mid" href="#works">Back to list</a>
+      <a class="next" href="#work-${next.slug}"><span class="k">Next project</span>${esc(next.title)}</a>
+    </nav>
+  </div></div>`;
+}
+
+const CV = [
+  ["Education", [
+    ["2024", "MFA Communication | Royal College of Art, London, UK"],
+    ["2021", "B.Des Visual Communication | Srishti Institute of Art, Design & Technology, Bangalore, India"]]],
+  ["Exhibitions", [
+    ["2026", "Future Folklore: The Art and Craft of Storytelling (group exhibition with Visual Arts Scotland) | Maclaurin Art Gallery, Ayr"],
+    ["2024", "Solo Exhibition | BBC Studioworks, The MediaWorks, London"],
+    ["2024", "Daana Pani, installation | RCA Thesis Show, London"]]],
+  ["Collaborative Projects", [
+    ["2024", "Production Designer, Incidental 36 by Ray Incident | London"]]],
+  ["Experience", [
+    ["2024 – Present", "Founder & Artist | For The Record, London"],
+    ["2021 – Present", "Design & Strategy Consultant | Copper Crush, Mumbai & London"],
+    ["2021", "Gallery Intern | Project 88, Mumbai"]]]
+];
+
+function aboutView() {
+  return `
+  <div class="col fade"><div class="inner about">
+    <h1 class="up">About</h1>
+    <div class="about-top">
+      <div>
+        <img class="portrait" src="img/portrait.jpg" alt="Portrait of Niya Prabhakar">
+        <div class="contact"><span>Contact</span><a href="mailto:niyaprabhakar8@gmail.com">niyaprabhakar8@gmail.com</a></div>
+      </div>
+      <div class="bio">
+        <p>Based in London,</p>
+        <p>I'm an artist who works across painting, installation, and spatial storytelling. My background in communication and spatial design has shaped a practice that is about creating narrative frameworks for viewers to step into.</p>
+        <p>I document my everyday surroundings and use those images as inspiration or 'starting points' of my artworks, I build them like tangible streams of consciousness. I use tactile materials like acrylic paints, wood stains, ink on canvas or cloth to create my paintings.</p>
+        <p>At the core of my work is a simple drive: to download complex feelings and ideas on to a surface.</p>
+        <p>I also design websites but only at gunpoint.</p>
+      </div>
+    </div>
+    <hr class="rule">
+    <div class="cv">${CV.map(([h, rows]) => `<section><h2>${h}</h2><ul>${rows.map(([y, t]) => `<li><span class="y">${y}</span> ${esc(t)}</li>`).join("")}</ul></section>`).join("")}</div>
+  </div></div>`;
+}
+
+function questView() {
+  return `
+  <div class="quest">
+    <div class="stage">
+      <div class="layer" id="q-def"><div class="orbit"><svg class="fish" id="fish" viewBox="0 0 64 32" width="56" height="28" aria-hidden="true"><path d="M6 16 C 16 4, 38 4, 48 16 C 38 28, 16 28, 6 16 Z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/><g id="tail"><path d="M48 16 L 60 7 L 57 16 L 60 25 Z" fill="none" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></g><circle cx="15" cy="14" r="1.6" fill="#111"/><path d="M24 9 C 27 13, 27 19, 24 23" fill="none" stroke="#111" stroke-width="1.2"/></svg><blockquote>“Side quests provide valuable experience points, money, rare equipment, and unique abilities that make your character stronger for the rest of the journey.”</blockquote></div></div>
+      <div class="layer" id="q-logo" style="opacity:0;visibility:hidden"><a class="logo" href="https://fortherecord.art/" target="_blank" rel="noopener" aria-label="For The Record, opens fortherecord.art"><img src="img/fortherecord.png" alt="For The Record"></a></div>
+      <div class="hint" id="q-hint">Scroll</div>
+    </div>
+  </div>`;
+}
+function questScroll() {
+  const q = document.querySelector(".quest"); if (!q) return;
+  const span = q.offsetHeight - window.innerHeight;
+  const p = Math.min(1, Math.max(0, (window.scrollY - q.offsetTop) / Math.max(1, span)));
+  const def = Math.max(0, 1 - p * 2.5), logo = Math.min(1, Math.max(0, (p - .35) * 2.5));
+  const d = document.getElementById("q-def"), l = document.getElementById("q-logo");
+  d.style.opacity = def; d.style.transform = `translateY(${-(1 - def) * 30}px)`;
+  l.style.opacity = logo; l.style.visibility = logo > 0 ? "visible" : "hidden"; l.style.transform = `translateY(${(1 - logo) * 30}px)`;
+  document.getElementById("q-hint").style.opacity = def;
+}
+window.addEventListener("scroll", questScroll, { passive: true });
+
+const still = matchMedia("(prefers-reduced-motion: reduce)");
+// The fish darts, then drifts: speed jumps to a random burst and eases back down; the tail beats faster when it swims faster.
+let fa = -0.6, fv = 0.0004, fTarget = 0.0004, fNext = 0, fLast = 0, fTail = 0;
+function swim(t) {
+  const fish = document.getElementById("fish");
+  const dt = Math.min(64, t - (fLast || t)); fLast = t;
+  if (fish) {
+    if (still.matches) fv = fTarget = 0;
+    else if (t > fNext) {
+      const dart = Math.random() < 0.45;
+      fTarget = dart ? 0.0016 + Math.random() * 0.0014 : 0.00012 + Math.random() * 0.00028;
+      fNext = t + (dart ? 350 + Math.random() * 500 : 1200 + Math.random() * 2200);
+    }
+    fv += (fTarget - fv) * Math.min(1, dt / (fTarget > fv ? 140 : 700));
+    fa -= fv * dt;
+    if (!still.matches) fTail += dt * (0.006 + fv * 22);
+    const o = fish.parentElement, W = o.offsetWidth, H = o.offsetHeight, q = o.querySelector("blockquote");
+    // An ellipse that clears the corners of the quote needs radii of about √2 × its half-size.
+    const rx = Math.min(q.offsetWidth / 2 * 1.42 + 24, innerWidth / 2 - 30), ry = q.offsetHeight / 2 * 1.42 + 22;
+    const x = W / 2 + Math.cos(fa) * rx, y = H / 2 + Math.sin(fa) * ry + (still.matches ? 0 : Math.sin(t / 380) * 2);
+    const ang = Math.atan2(-Math.cos(fa) * ry, Math.sin(fa) * rx) * 180 / Math.PI + 180;
+    fish.style.transform = `translate(${x - 28}px, ${y - 14}px) rotate(${ang}deg)`;
+    document.getElementById("tail").setAttribute("transform", `rotate(${Math.sin(fTail) * (10 + fv * 9000)} 48 16)`);
+  }
+requestAnimationFrame(swim);
+}
+requestAnimationFrame(swim);
+
+// Charcoal trail: a soft grainy stroke that fades over 2 seconds. It never draws over artwork.
+(function charcoal() {
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches || still.matches) return;
+  const c = document.createElement("canvas");
+  c.setAttribute("aria-hidden", "true");
+  c.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:15";
+  document.body.appendChild(c);
+  const x = c.getContext("2d"), LIFE = 2000;
+  let pts = [], dpr = 1;
+  const size = () => { dpr = Math.min(2, devicePixelRatio || 1); c.width = innerWidth * dpr; c.height = innerHeight * dpr; };
+  size(); addEventListener("resize", size);
+  // Points are kept in page coordinates, so marks stay on the page as it scrolls,
+  // and scrolling under a still cursor draws a line down the page like a dragged stick of charcoal.
+  // Artwork is kept clean: no marks over any image, video, the viewer, the book or the film.
+  const ART = "img, video, .hero-img, .viewer, .book, .film";
+  let last = null;
+  const mark = (cx, cy, el) => {
+    if (el && el.closest && el.closest(ART)) { pts.push(null); return; }
+    pts.push({ x: cx + scrollX, y: cy + scrollY, t: performance.now(), j: Array.from({ length: 6 }, () => Math.random() - .5) });
+  };
+  addEventListener("pointermove", e => { if (e.pointerType !== "mouse") return; last = { x: e.clientX, y: e.clientY }; mark(e.clientX, e.clientY, e.target); }, { passive: true });
+  addEventListener("scroll", () => { if (last) mark(last.x, last.y, document.elementFromPoint(last.x, last.y)); }, { passive: true });
+  document.documentElement.addEventListener("pointerleave", () => { last = null; pts.push(null); });
+  addEventListener("hashchange", () => { pts = []; });
+  function draw(now) {
+    pts = pts.filter(p => p === null || now - p.t < LIFE);
+    while (pts[0] === null) pts.shift();
+    x.setTransform(dpr, 0, 0, dpr, 0, 0);
+    x.clearRect(0, 0, innerWidth, innerHeight);
+    x.translate(-scrollX, -scrollY);
+    x.lineCap = "round";
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1], b = pts[i];
+      if (!a || !b) continue;
+      const life = 1 - (now - b.t) / LIFE;
+      for (let k = 0; k < 3; k++) {
+        x.strokeStyle = `rgba(20,20,20,${0.22 * life})`;
+        x.lineWidth = 1 + k * .7;
+        x.beginPath();
+        x.moveTo(a.x + a.j[k] * 2.2, a.y + a.j[k + 3] * 2.2);
+        x.lineTo(b.x + b.j[k] * 2.2, b.y + b.j[k + 3] * 2.2);
+        x.stroke();
+      }
+      x.fillStyle = `rgba(20,20,20,${0.28 * life})`;
+      for (let k = 0; k < 2; k++) x.fillRect(b.x + b.j[k] * 7, b.y + b.j[k + 2] * 7, .9, .9);
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+
+function render() {
+  const [h, mode] = (location.hash.slice(1) || "home").split("/");
+  const w = h.startsWith("work-") && WORKS.find(k => "work-" + k.slug === h);
+  const view = w ? "works" : ["about", "works", "side-quest"].includes(h) ? h : "home";
+  app.innerHTML = w ? workView(w, mode === "installation") : view === "about" ? aboutView() : view === "works" ? worksView() : view === "side-quest" ? questView() : homeView();
+  document.querySelector("footer.site").hidden = view === "side-quest";
+  document.getElementById("role").hidden = view !== "home";
+  document.querySelectorAll("nav.main a").forEach(a => a.toggleAttribute("aria-current", false));
+  document.querySelector(`nav.main a[data-nav="${view}"]`)?.setAttribute("aria-current", "page");
+  window.scrollTo(0, 0);
+  bookAt = 0; bookSet(0);
+  questScroll();
+}
+app.addEventListener("change", e => {
+  if (e.target.id !== "cat") return;
+  filter = e.target.value;
+  const y = window.scrollY; app.innerHTML = worksView(); window.scrollTo(0, y);
+  document.getElementById("cat").focus();
+});
+const viewer = document.getElementById("viewer");
+let zooms = [], zi = 0;
+function showZoom(i) {
+  zi = (i + zooms.length) % zooms.length;
+  const el = zooms[zi];
+  document.getElementById("v-img").src = "img/" + el.dataset.zoom;
+  document.getElementById("v-img").alt = el.dataset.cap;
+  document.getElementById("v-cap").textContent = el.dataset.cap;
+  const multi = zooms.length > 1;
+  document.getElementById("v-prev").hidden = !multi; document.getElementById("v-next").hidden = !multi;
+}
+app.addEventListener("click", e => {
+  const z = e.target.closest("[data-zoom]"); if (!z) return;
+  zooms = [...app.querySelectorAll("[data-zoom]")];
+  showZoom(zooms.indexOf(z)); viewer.hidden = false; document.getElementById("v-close").focus();
+});
+const closeViewer = () => { viewer.hidden = true; };
+document.getElementById("v-close").addEventListener("click", closeViewer);
+document.getElementById("v-prev").addEventListener("click", () => showZoom(zi - 1));
+document.getElementById("v-next").addEventListener("click", () => showZoom(zi + 1));
+viewer.addEventListener("click", e => { if (e.target === viewer || e.target.classList.contains("stage")) closeViewer(); });
+document.addEventListener("keydown", e => {
+  if (viewer.hidden) return;
+  if (e.key === "Escape") closeViewer();
+  if (e.key === "ArrowLeft") showZoom(zi - 1);
+  if (e.key === "ArrowRight") showZoom(zi + 1);
+});
+// Flip book: click the right page (or swipe left) to turn forward, the left page to go back.
+let bookAt = 0;
+function bookSet(to) {
+  const book = app.querySelector(".book");
+  if (!book) return;
+  const leaves = [...book.querySelectorAll(".leaf")], n = leaves.length;
+  to = Math.max(0, Math.min(n, to));
+  leaves.forEach((l, i) => {
+    const flip = i < to;
+    if (flip !== l.classList.contains("flipped")) {
+      l.style.zIndex = 200 + i;
+      setTimeout(() => { l.style.zIndex = l.classList.contains("flipped") ? i + 1 : n - i; }, 900);
+    }
+    l.classList.toggle("flipped", flip);
+  });
+  // Load the next spreads ahead of time.
+  leaves.slice(to, to + 2).forEach(l => l.querySelectorAll("img").forEach(im => im.loading = "eager"));
+  bookAt = to;
+  book.classList.toggle("at-start", to === 0);
+  book.classList.toggle("at-end", to === n);
+  const pages = book.querySelectorAll("img").length;
+  app.querySelector(".b-ctrl .count").textContent = to === 0 ? "Cover" : to === n ? "Back cover" : `Pages ${2 * to}–${Math.min(2 * to + 1, pages)} of ${pages}`;
+  app.querySelector('[data-flip="-1"]').disabled = to === 0;
+  app.querySelector('[data-flip="1"]').disabled = to === n;
+}
+let swipeX = null;
+app.addEventListener("pointerdown", e => { if (e.target.closest(".book")) swipeX = e.clientX; });
+app.addEventListener("pointerup", e => {
+  const book = e.target.closest(".book");
+  if (!book || swipeX === null) return;
+  const dx = e.clientX - swipeX; swipeX = null;
+  if (Math.abs(dx) > 30) return bookSet(bookAt + (dx < 0 ? 1 : -1));
+  const r = book.getBoundingClientRect();
+  bookSet(bookAt + (e.clientX > r.left + r.width / 2 ? 1 : -1));
+});
+app.addEventListener("click", e => {
+  const y = e.target.closest(".yt");
+  if (!y) return;
+  const f = document.createElement("iframe");
+  f.src = `https://www.youtube-nocookie.com/embed/${y.dataset.yt}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+  f.title = y.getAttribute("aria-label").replace(/^Play /, "");
+  f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  f.allowFullscreen = true;
+  y.replaceWith(f);
+});
+app.addEventListener("click", e => { const b = e.target.closest("[data-flip]"); if (b) bookSet(bookAt + +b.dataset.flip); });
+app.addEventListener("keydown", e => {
+  if (!e.target.classList.contains("book")) return;
+  if (e.key === "ArrowRight") { e.preventDefault(); bookSet(bookAt + 1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); bookSet(bookAt - 1); }
+});
+
+window.addEventListener("hashchange", () => { closeViewer(); render(); });
+render();
+</script>
+
+</body>
+</html>
