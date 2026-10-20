@@ -592,7 +592,7 @@ function homeView() {
   const items = WORKS.map(w => `<a href="#work-${w.slug}" aria-label="${esc(w.title)}"><img src="${thumb(w.cover)}" alt="${esc(w.title)}, ${w.year}"></a>`).join("");
   return `
   <div class="home fade">
-    <section class="gut intro"><p class="up"><b>Niya</b> is a London-based artist working across large-scale painting, installation and spatial storytelling.</p></section>
+    <section class="gut intro"><p class="up"><b>Niya</b> is a London-based artist working across large-scale painting, installation and art direction.</p></section>
     <section class="marquee" aria-label="Selected works"><div class="track">${items}${items.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ')}</div></section>
   </div>`;
 }
