@@ -23,9 +23,9 @@ head = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Niya Prabhakar is a London-based artist working across painting, installation and spatial storytelling.">
+<meta name="description" content="Niya Prabhakar is a London-based artist working across painting, installation and art direction.">
 <meta property="og:title" content="Niya Prabhakar">
-<meta property="og:description" content="Painting, installation and spatial storytelling. London.">
+<meta property="og:description" content="Painting, installation and art direction. London.">
 <meta property="og:image" content="https://{DOMAIN}/img/the-fabric-of-persistence-main-1.jpg">
 <meta property="og:url" content="https://{DOMAIN}/">
 <meta name="twitter:card" content="summary_large_image">
